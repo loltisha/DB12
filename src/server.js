@@ -37,9 +37,6 @@ app.use(bodyParser.json());
 // Parse Cookie header and populate req.cookies
 app.use(cookieParser());
 
-// this parses requests sent by `fetch`, which use a different content type
-app.use(bodyParser.urlencoded({ extended: true }));
-
 // register route files
 app.use(exampleRoutes);
 app.use(userRoutes);
