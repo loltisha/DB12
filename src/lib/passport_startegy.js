@@ -54,8 +54,6 @@ const jwtStrategy = new JwtStrategy(jwtOptions, (jwtPayload, next) => {
 // serialize and deserialize functions are used by passport under
 // the hood to determine what `req.user` should be inside routes
 passport.serializeUser((user, done) => {
-  // we want access to the full Mongoose object that we got in the
-  // strategy callback, so we just pass it along with no modifications
   done(null, user);
 });
 

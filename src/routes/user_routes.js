@@ -51,7 +51,7 @@ router.post("/sign-up", (req, res, next) => {
         res
           .cookie("jwt", token, { httpOnly: true, secure: false })
           .status(201)
-          .json({ user: { id: req.user.id, email: req.user.email }, token });
+          .json({ id: req.user.id, email: req.user.email });
       });
     })
     // pass any errors along to the error handler
@@ -80,7 +80,7 @@ router.post("/sign-in", localAuth, (req, res, next) => {
       res
         .cookie("jwt", token, { httpOnly: true, secure: false })
         .status(200)
-        .json({ user: { id: req.user.id, email: req.user.email }, token });
+        .json({ id: req.user.id, email: req.user.email });
     });
   }
 });

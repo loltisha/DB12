@@ -16,7 +16,7 @@ export default (err, req, res, next) => {
 
   // there are `ValidationError`s and `ValidatorErrors`, so use a regex
   // to catch them both
-  if (err.name.match(/Valid/) || err.name === "MongoError") {
+  if (err.name.match(/Valid/) || err.name === "SequelizeValidationError") {
     // if the error came from trying to create a user that already exists,
     // the error message will contain a bunch of data about that user.
     // That's a major vulnerability, so we need to send back a custom message
